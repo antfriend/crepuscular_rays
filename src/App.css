@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -18,7 +18,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -38,17 +38,17 @@
 } */
 
 .search-box {
-  padding: 10px;
-  font-size: 24px;
+  padding: 1em;
+  font-size: xx-large;
   border: 1px solid black;
 }
 
 #hits .ais-Hits-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60px 60px;
   width: 100%;
 }
 
 #hits.list .ais-Hits-list {
-grid-template-columns: 1fr;
+grid-template-columns: 60px 60px;
 }
