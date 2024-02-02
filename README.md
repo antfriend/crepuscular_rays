@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Crepuscular Rays
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Card Carousel Example:   
+https://codepen.io/studiojvla/pen/qVbQqW
+
+
+
 
 ## Available Scripts
 
