@@ -1,6 +1,6 @@
 import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits, HitsPerPage } from 'react-instantsearch';
+import { InstantSearch, SearchBox, Hits, HitsPerPage, PoweredBy } from 'react-instantsearch';
 import './App.css'; // Importing the CSS file
 import Eyeball from 'react-eyeball';
 
@@ -10,14 +10,24 @@ const searchClient = algoliasearch('3AUHR4IE0C', 'b152fa9673ced6bc795ad370b729bf
 // Define how each hit (result) will be rendered
 const Hit = ({ hit }) => (
   <div className="hit-card"> 
-    <div className="image-column">
-      <a href={hit.url}>
-        <img src={hit.image} height="400" alt="journal page" />
-      </a>
-    </div>
-    <div className="info-column">
-      <h3>{hit.title}</h3>
-      <p>{hit.content}</p>
+
+    {/* <div className="title-area" >
+      <h2>{hit.title}</h2>
+    </div> */}
+
+    <h1> * {hit.title}</h1>
+
+    <div>
+
+      <div className="image-column">
+        <a href={hit.url}> 
+          <img src={hit.image} height="400" alt="journal page" />
+        </a>
+      </div>
+      <div className="info-column">
+        <textarea >{hit.content}</textarea>
+      </div>
+
     </div>
   </div>
 );
@@ -30,10 +40,12 @@ function App() {
 
       <SearchBox className="search-box"
               translations={{
-                placeholder: 'Crepuscular rays'
+                placeholder: "Crepuscular Rays"
               }} />
 
-      <img height="24px" src="crepuscular_rays/images/Algolia-logo-white.png" alt="Algolia logo" />
+      
+      
+        <PoweredBy theme="dark" style={{ width: "200px" }}/>
 
       <div className="hits-grid" >
 

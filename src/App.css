@@ -38,13 +38,12 @@
   font-size: 24px;
   border: 2px solid #282c34;
   height: 50px;
-  width: 500px;
+  width: 800px;
   color: white;
   background-color: #282c34;
 }
 
 .ais-SearchBox-submitIcon {
-  
   height: 24px;
   width: 24px;
 }
@@ -59,16 +58,7 @@ input[type="search" i] {
   background-color: #282c34;
 }
 
-.bigger-search-box {
-  width: 100%; /* Set the width to 100% of its parent container, or you can specify a fixed width */
-  height: 50px; /* Set the height of the search box */
-  font-size: 20px; /* Increase the font size */
-  padding: 10px; /* Add some padding inside the search box */
-  border: 2px solid #282c34; /* Add a border to the search box */
-  border-radius: 5px; /* Optional: Add rounded corners */
-}
 
-/* App.css */
 .ais-InstantSearch {
   text-align: center;
   padding: 10px;
@@ -89,8 +79,15 @@ input[type="search" i] {
   background-color: #282c34;
 }
 
+.title-area {
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 90%
+}
+
 .image-column {
-  flex: 0 0 auto;
+  float: left;
   margin-right: 10px;
 }
 
@@ -100,13 +97,20 @@ input[type="search" i] {
 
 .hit-card {
   display: flex;
-  width: 800px;
-  height: 420px;
+  width: 900px;
+  height: 440px;
   margin: 10px;
   border: 1px solid #282c34;
   padding: 10px;
   border-radius: 4px;
   background-color: #282c34;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: white;
+}
+
+textarea {
+  width: 400px;
+  height: 420px;
+  background-color: #282c34;
   color: white;
 }
