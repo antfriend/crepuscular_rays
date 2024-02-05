@@ -17,7 +17,7 @@ const Hit = ({ hit }) => (
     </div>
     <div className="info-column">
       <h3>{hit.title}</h3>
-      <p>{hit.url}</p>
+      <p>{hit.content}</p>
     </div>
   </div>
 );
