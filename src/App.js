@@ -10,31 +10,18 @@ const searchClient = algoliasearch('3AUHR4IE0C', 'b152fa9673ced6bc795ad370b729bf
 // Define how each hit (result) will be rendered
 const Hit = ({ hit }) => (
   <div className="hit-card"> 
-
-    {/* <div className="title-area" >
-      <h2>{hit.title}</h2>
-    </div> */}
-
-    <h1> * {hit.title}</h1>
-
-    <div>
-
-      <div className="image-column">
-        <a href={hit.url}> 
-          <img src={hit.image} height="400" alt="journal page" />
-        </a>
-      </div>
-      <div className="info-column">
-        <textarea >{hit.content}</textarea>
-      </div>
-
-    </div>
+    <h2>{hit.title}</h2>
+    <img src={hit.image} width="600" alt="journal page" />
+    <br></br>
+    <textarea >{hit.content}</textarea>
+      
   </div>
 );
 
 function App() {
   return (
     <InstantSearch indexName="Crepuscular_Rays" searchClient={searchClient}>
+      <div class="eye-search">
 
       <Eyeball />
 
@@ -43,12 +30,12 @@ function App() {
                 placeholder: "Crepuscular Rays"
               }} />
 
+      </div>
       
-      
-        <PoweredBy theme="dark" style={{ width: "200px" }}/>
-
+        
+      <PoweredBy theme="dark" style={{ width: "200px" }}/>
       <div className="hits-grid" >
-
+      
         <Hits hitComponent={Hit}  /> 
 
       </div>

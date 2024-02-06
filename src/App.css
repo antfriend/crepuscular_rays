@@ -13,9 +13,11 @@
   text-align: left;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.eye-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .App-header {
@@ -38,22 +40,26 @@
   font-size: 24px;
   border: 2px solid #282c34;
   height: 50px;
-  width: 800px;
+  
   color: white;
-  background-color: #282c34;
+  background-color:#282c34;
+
 }
 
 .ais-SearchBox-submitIcon {
-  height: 24px;
-  width: 24px;
+  height: 34px;
+  width: 36px;
+  /* visibility: hidden; */
+
 }
 
 input[type="search" i] {
   appearance: auto;
   box-sizing: border-box;
-  font-size: 24px;
+  width: 600px;
+  font-size: 28px;
   padding-block: 10px;
-  padding-inline: 20px;
+  padding-inline: 10px;
   color: white;
   background-color: #282c34;
 }
@@ -62,15 +68,15 @@ input[type="search" i] {
 .ais-InstantSearch {
   text-align: center;
   padding: 10px;
-  background-color: #282c34;
-  height: 600px;
+  background-color:#282c34;
+
 } 
 
 .hits-grid {
   display: grid;
   
-  grid-template-columns: fit-content(8ch) fit-content(8ch) 1fr;
-  
+  grid-template-columns: fit-content(40ch) fit-content(40ch) 1fr;
+  background-color: #282c34;
 }
 
 .not-hit-card {
@@ -97,20 +103,26 @@ input[type="search" i] {
 
 .hit-card {
   display: flex;
-  width: 900px;
-  height: 440px;
-  margin: 10px;
+  width: 100%;
+  height: 100%;
+  margin: 11px;
   border: 1px solid #282c34;
   padding: 10px;
   border-radius: 4px;
   background-color: #282c34;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   color: white;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: stretch;
 }
 
 textarea {
-  width: 400px;
+  width: 600px;
   height: 420px;
   background-color: #282c34;
   color: white;
+  font-size: 24px;
 }
