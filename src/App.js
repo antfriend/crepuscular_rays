@@ -11,16 +11,18 @@ const searchClient = algoliasearch('3AUHR4IE0C', 'b152fa9673ced6bc795ad370b729bf
 const Hit = ({ hit }) => (
   <div className="hit-card"> 
     <h2>{hit.title}</h2>
+    <div class="innards">
     <img src={hit.image} width="600" alt="journal page" />
     <br></br>
     <textarea >{hit.content}</textarea>
-      
+    </div>
   </div>
 );
 
 function App() {
   return (
     <InstantSearch indexName="Crepuscular_Rays" searchClient={searchClient}>
+      <PoweredBy theme="dark" style={{ width: "200px" }}/>
       <div class="eye-search">
 
       <Eyeball />
@@ -33,7 +35,7 @@ function App() {
       </div>
       
         
-      <PoweredBy theme="dark" style={{ width: "200px" }}/>
+      
       <div className="hits-grid" >
       
         <Hits hitComponent={Hit}  /> 

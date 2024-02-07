@@ -53,6 +53,8 @@
 
 }
 
+
+
 input[type="search" i] {
   appearance: auto;
   box-sizing: border-box;
@@ -73,11 +75,29 @@ input[type="search" i] {
 } 
 
 .hits-grid {
-  display: grid;
-  
-  grid-template-columns: fit-content(40ch) fit-content(40ch) 1fr;
+  padding-left: 0px;
+  align-items: left;
   background-color: #282c34;
 }
+
+.ais-Hits {
+  padding-left: 0px;
+}
+
+.ais-Hits-list {
+  padding-left: 0px;
+}
+
+ol {
+  list-style-type: none;
+  padding-left: 0px;
+  padding-inline-start: 0px;
+}
+
+
+/* .ais-Hits-item {
+
+} */
 
 .not-hit-card {
   display: flex;
@@ -89,7 +109,7 @@ input[type="search" i] {
   float: left;
   margin-right: 10px;
   margin-left: 10px;
-  width: 90%
+  
 }
 
 .image-column {
@@ -112,9 +132,9 @@ input[type="search" i] {
   background-color: #282c34;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   color: white;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: stretch;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
   justify-content: space-evenly;
   align-items: stretch;
 }
