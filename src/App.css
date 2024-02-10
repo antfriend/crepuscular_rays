@@ -22,12 +22,11 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -46,19 +45,19 @@
 
 }
 
-.ais-SearchBox-submitIcon {
-  height: 34px;
-  width: 36px;
-  /* visibility: hidden; */
-
+.ais-SearchBox-submit {
+  visibility: hidden;
 }
 
+.ais-SearchBox-reset {
+  visibility: hidden;
+}
 
 
 input[type="search" i] {
   appearance: auto;
   box-sizing: border-box;
-  width: 600px;
+  /* width: 600px; */
   font-size: 28px;
   padding-block: 10px;
   padding-inline: 10px;
@@ -95,10 +94,6 @@ ol {
 }
 
 
-/* .ais-Hits-item {
-
-} */
-
 .not-hit-card {
   display: flex;
   align-items: center;
@@ -107,9 +102,7 @@ ol {
 
 .title-area {
   float: left;
-  margin-right: 10px;
   margin-left: 10px;
-  
 }
 
 .image-column {
@@ -140,7 +133,7 @@ ol {
 }
 
 textarea {
-  width: 600px;
+  width: 95%;
   height: 420px;
   background-color: #282c34;
   color: white;
