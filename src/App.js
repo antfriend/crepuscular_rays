@@ -7,32 +7,40 @@ import Eyeball from 'react-eyeball';
 // Replace with your own Algolia credentials
 const searchClient = algoliasearch('3AUHR4IE0C', 'b152fa9673ced6bc795ad370b729bfd2');
 
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+
+const some_value = params.q;
 // Define how each hit (result) will be rendered
 const Hit = ({ hit }) => (
   <div className="hit-card"> 
     <h1>{hit.title}</h1>
-    <div class="innards">
+    <div className="innards">
     <img src={hit.image} width="95%" alt="journal page" />
     <br></br>
-    <textarea >{hit.content}</textarea>
+    <textarea defaultValue={hit.content} ></textarea>
     </div>
   </div>
 );
 
+
 function App() {
   return (
-    <InstantSearch indexName="Crepuscular_Rays" searchClient={searchClient}>
+    <InstantSearch 
+      indexName="Crepuscular_Rays" 
+      searchClient={searchClient} 
+      // searchParameters={
+      //   query={some_value} 
+      // }
+    >
       <PoweredBy theme="dark" style={{ width: "200px" }}/>
-      <div class="eye-search">
+      <div className="eye-search">
         <Eyeball />
 
-        <SearchBox className="search-box"
-                translations={{
-                  placeholder: "Crepuscular Rays"
-                }} />
+        <SearchBox className="search-box" value="eye" />
       </div>
-      
-        
+              
       
       <div className="hits-grid" >
       
