@@ -38,7 +38,7 @@ function App() {
       <div className="eye-search">
         <Eyeball />
 
-        <SearchBox className="search-box" value="eye" />
+        <SearchBox className="search-box" placeholder={some_value} />
       </div>
               
       
