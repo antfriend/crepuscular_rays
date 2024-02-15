@@ -1,6 +1,6 @@
 import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits, HitsPerPage, PoweredBy } from 'react-instantsearch';
+import { InstantSearch, SearchBox, Hits, HitsPerPage, PoweredBy, Configure } from 'react-instantsearch';
 import './App.css'; // Importing the CSS file
 import Eyeball from 'react-eyeball';
 
@@ -11,7 +11,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
 
-const some_value = params.q;
+let some_value = params.q || 'crepuscular rays';
 // Define how each hit (result) will be rendered
 const Hit = ({ hit }) => (
   <div className="hit-card"> 
@@ -30,18 +30,27 @@ function App() {
     <InstantSearch 
       indexName="Crepuscular_Rays" 
       searchClient={searchClient} 
+      initialUiState={{
+        Crepuscular_Rays: {
+          query: some_value
+        },
+      }}
       // searchParameters={
       //   query={some_value} 
       // }
     >
+        <Configure
+        analytics={false}
+        hitsPerPage={1}
+      />
+      
       <PoweredBy theme="dark" style={{ width: "200px" }}/>
+
       <div className="eye-search">
         <Eyeball />
-
         <SearchBox className="search-box" placeholder={some_value} />
       </div>
               
-      
       <div className="hits-grid" >
       
         <Hits hitComponent={Hit}  /> 
