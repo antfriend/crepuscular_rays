@@ -35,12 +35,10 @@ function App() {
           query: some_value
         },
       }}
-      // searchParameters={
-      //   query={some_value} 
-      // }
+
     >
         <Configure
-        analytics={false}
+        analytics={true}
         hitsPerPage={1}
       />
       
