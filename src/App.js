@@ -3,7 +3,7 @@ import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, PoweredBy, Configure } from 'react-instantsearch';
 import './App.css'; // Importing the CSS file
 import Eyeball from 'react-eyeball';
-
+import {Helmet} from "react-helmet";
 
 const searchClient = algoliasearch('3AUHR4IE0C', 'b152fa9673ced6bc795ad370b729bfd2');
 
@@ -15,6 +15,14 @@ let some_value = params.q || 'crepuscular rays';
 
 const Hit = ({ hit }) => (
   <div className="hit-card"> 
+    <Helmet>
+        <meta charSet="utf-8" />
+        <meta property="og:title" content={hit.title} />
+        <title>{hit.title}</title>
+        <meta property="og:url" content={hit.url} />
+        <meta property="og:image:url" content={hit.image} />
+        <link rel="canonical" href={hit.url} />
+    </Helmet>
     <h1>{hit.title}</h1>
     <div className="innards">
     <img src={hit.image} width="95%" alt="journal page" />
@@ -24,6 +32,20 @@ const Hit = ({ hit }) => (
   </div>
 );
 
+// class Application extends React.Component {
+//   render () {
+//     return (
+//         <div className="application">
+//             <Helmet>
+//                 <meta charSet="utf-8" />
+//                 <title>My Title</title>
+//                 <link rel="canonical" href="http://mysite.com/example" />
+//             </Helmet>
+//             ...
+//         </div>
+//     );
+//   }
+// };
 
 function App() {
   return (
@@ -36,6 +58,8 @@ function App() {
         },
       }}
     >
+
+
 
     <Configure  analytics={true}  hitsPerPage={1}  />
       
